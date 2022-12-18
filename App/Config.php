@@ -20,13 +20,13 @@ class Config
      * Database name
      * @var string
      */
-    const DB_NAME = 'videgrenierenligne';
+    const DB_NAME = 'sebmin';
 
     /**
      * Database user
      * @var string
      */
-    const DB_USER = 'webapplication';
+    const DB_USER = 'sebmin';
 
     /**
      * Database password

@@ -47,11 +47,13 @@ class User extends \Core\Controller
 
             if($f['password'] !== $f['password-check']){
                 // TODO: Gestion d'erreur côté utilisateur
+                
             }
 
             // validation
 
             $this->register($f);
+            
             // TODO: Rappeler la fonction de login pour connecter l'utilisateur
         }
 
@@ -84,7 +86,8 @@ class User extends \Core\Controller
                 "email" => $data['email'],
                 "username" => $data['username'],
                 "password" => Hash::generate($data['password'], $salt),
-                "salt" => $salt
+                "salt" => $salt,
+
             ]);
 
             return $userID;
