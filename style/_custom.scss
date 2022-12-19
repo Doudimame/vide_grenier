@@ -173,7 +173,7 @@ select,
 textarea {
   &:focus {
     -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
+    moz-box-shadow: none !important;
     box-shadow: none !important;
     outline: none !important;
   }
@@ -266,7 +266,7 @@ ul.list-inline {
 //TAGS
 .tags-type1,
 .tags-type2 {
-  font-size: 0;
+  fond-size: 0;
   display: table;
   a {
     display: inline-block;
