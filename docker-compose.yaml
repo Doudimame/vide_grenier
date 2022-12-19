@@ -1,0 +1,34 @@
+version: '1'
+services:
+  mariadb:
+    image: 'mariadb:latest'
+    restart: 'always'
+    environment:
+      MYSQL_USER: 'webapplication'
+      MYSQL_PASSWORD: '653rag9T'
+      MYSQL_DATABASE: 'videgrenierenligne'
+      MYSQL_ROOT_PASSWORD: '653rag9Te'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./sql/import.sql:/docker-entrypoint-initdb.d/import.sql
+  
+  phpmyadmin:
+    image: 'phpmyadmin:latest'
+    restart: 'always'
+    ports:
+      - '8080:80'
+    depends_on:
+      - mariadb
+    environment:
+      PMA_HOST: mariadb
+  
+  vide-grenier:
+    image: 'videgrenierphp2:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8081:80'
+    environment:
+      - ALLOW_OVERRIDE=true
