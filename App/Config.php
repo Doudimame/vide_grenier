@@ -14,19 +14,19 @@ class Config
      * Database host
      * @var string
      */
-    const DB_HOST = 'localhost';
+    const DB_HOST = 'mariadb';
 
     /**
      * Database name
      * @var string
      */
-    const DB_NAME = 'sebmin';
+    const DB_NAME = 'videgrenierenligne';
 
     /**
      * Database user
      * @var string
      */
-    const DB_USER = 'sebmin';
+    const DB_USER = 'webapplication';
 
     /**
      * Database password
