@@ -24,6 +24,7 @@
 
 </head>
 <body>
+    
 <!-- logo, menu, search, avatar -->
 <div class="container-fluid ">
     <div class="row">
@@ -44,6 +45,7 @@
                             <li class="color-active"><a href="/product">Déposer une annonce</a></li>
                         </ul>
                     </div>
+
 
                     <div class="col-lg-6 col-sm-8 col-xs-3">
                         <!--<form action="search.html" method="post">
@@ -126,6 +128,7 @@
     </div>
 </div>
 
+
     {% block body %}
     {% endblock %}
     <footer>
@@ -168,6 +171,46 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
     <script src="/js/custom.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+        var offset = 220;
+        var duration = 500;
+        jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+        jQuery('.back-to-top').fadeIn(duration);
+        } else {
+        jQuery('.back-to-top').fadeOut(duration);
+        }
+        });
+        jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+        })
+        });
+        </script>
+        <style>
+        div#page {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        }
+        .back-to-top {
+        position: fixed;
+        bottom: 2em;
+        right: 0px;
+        text-decoration: none;
+        color: #000000;
+        font-size: 12px;
+        padding: 1em;
+        display: none;
+        }
+        .back-to-top:hover {
+        text-decoration: none;
+        }
+        </style>
+        
 
     {% block javascript %}
     {% endblock %}
